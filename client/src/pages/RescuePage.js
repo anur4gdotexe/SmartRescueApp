@@ -15,7 +15,7 @@ function RescuePage() {
       (pos) => {
         const userLocation = {latitude: pos.coords.latitude, longitude: pos.coords.longitude};
         setLocation(userLocation);
-        sendLocationToBackend(userLocation);
+        sendLocationToBackend(location);
         setError(null);
       },
       (err) => {
@@ -25,13 +25,25 @@ function RescuePage() {
   };
 
   const sendLocationToBackend = async (loc) => {
-    const res = await fetch('http://localhost:5000/api/rescue', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(loc)
+    const {latitude, longitude} = loc;
+    const url = `http://localhost:5000/shelters/near?lat=${latitude}&lon=${longitude}`;
+    console.log(url);
+
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'}
     });
+
     const data = await res.json();
-    setShelters(data);
+
+    if (res.ok) {
+      setShelters(data);
+      setError(null);
+    }
+    else {
+      setError(data.message || "server error");
+      setShelters([]);
+    }
   }
 
   return (
@@ -46,16 +58,18 @@ function RescuePage() {
         </div>
       )}
 
-      <p>Shelters near you:</p>
-      <ul>
-        {shelters.map((shelter, idx) => (
+      {error ? (
+        <p style={{ color: "red" }}>{error}</p>
+      ) : (
+        <ul>
+          Name - distance - contact
+          {shelters.map((shelter, idx) => (
           <li key={idx}>
-            {shelter.name} - {shelter.distance} - {shelter.contact}
-          </li>
-        ))}
-      </ul>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
+            {shelter.name} - {Math.round(shelter.distance)}m - {shelter.phone}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
