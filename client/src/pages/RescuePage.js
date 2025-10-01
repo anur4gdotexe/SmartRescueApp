@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import MapView from '../pages/MapView';
 
-function RescuePage() {
+const RescuePage = () => {
   const [location, setLocation] = useState(null);
   const [shelters, setShelters] = useState([]);
   const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ function RescuePage() {
       (pos) => {
         const userLocation = {latitude: pos.coords.latitude, longitude: pos.coords.longitude};
         setLocation(userLocation);
-        sendLocationToBackend(location);
+        sendLocationToBackend(userLocation);
         setError(null);
       },
       (err) => {
@@ -58,17 +59,10 @@ function RescuePage() {
         </div>
       )}
 
-      {error ? (
-        <p style={{ color: "red" }}>{error}</p>
-      ) : (
-        <ul>
-          Name - distance - contact
-          {shelters.map((shelter, idx) => (
-          <li key={idx}>
-            {shelter.name} - {Math.round(shelter.distance)}m - {shelter.phone}
-            </li>
-          ))}
-        </ul>
+      {error && (<p style={{ color: "red" }}>{error}</p>)}
+      
+      {shelters && location && (
+        <MapView shelters={shelters} userLocation={location} />
       )}
     </div>
   );

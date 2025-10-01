@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import RescuePage from './pages/RescuePage'; 
+import 'leaflet/dist/leaflet.css';
 
-function App() {
+const App = () => {
   return (
     <div>
       < RescuePage />
