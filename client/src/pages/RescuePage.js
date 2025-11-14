@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import MapView from '../pages/MapView';
+import './styles/RescuePage.css';
+import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
+                
 
 const RescuePage = () => {
   const [location, setLocation] = useState(null);
@@ -20,6 +23,7 @@ const RescuePage = () => {
         setError(null);
       },
       (err) => {
+        console.error("Geo error:", err);
         setError('Error fetching location: ' + err.message);
       }
     );
@@ -28,7 +32,6 @@ const RescuePage = () => {
   const sendLocationToBackend = async (loc) => {
     const {latitude, longitude} = loc;
     const url = `http://localhost:5000/shelters/near?lat=${latitude}&lon=${longitude}`;
-    console.log(url);
 
     const res = await fetch(url, {
       method: 'GET',
@@ -48,21 +51,29 @@ const RescuePage = () => {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Smart Rescue</h1>
-      <button onClick={fetchLocation}>Rescue</button>
+    <div className="main">
+      <div className='btn-section'>
+        <button className="rescue-btn" onClick={fetchLocation}>FIND SHELTERS</button>
 
-      {location && (
-        <div>
-          <p>Latitude: {location.latitude}</p>
-          <p>Longitude: {location.longitude}</p>
-        </div>
+        {location && (
+          <p>Latitude: {location.latitude} | Longitude: {location.longitude}</p>
+        )}
+
+        {error && (<p style={{ color: "red" }}>{error}</p>)}
+      </div>
+          
+      {shelters.length == 0 && (
+      <div className='map-container'>
+      <MapContainer center={[28.6139, 77.2090]} zoom={13} style={{height: "100%", width: "100%", borderRadius: "0.5rem", boxShadow: "0 0 5px rgba(0, 0, 0, 0.1"}}>
+      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>' url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'/>
+        </MapContainer>
+      </div>
       )}
 
-      {error && (<p style={{ color: "red" }}>{error}</p>)}
-      
       {shelters && location && (
+      <div className="map-container">
         <MapView shelters={shelters} userLocation={location} />
+      </div>
       )}
     </div>
   );

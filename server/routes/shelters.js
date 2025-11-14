@@ -22,6 +22,7 @@ router.get("/near", async (req, res) => {
         ]).toArray();
 
         res.json(shelters);
+        res.status(200);
     }
     catch (err) {
         console.log(err);

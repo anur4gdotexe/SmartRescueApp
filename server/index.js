@@ -5,6 +5,7 @@ const {connectDB} = require('./config/db');
 connectDB();
 
 const shelterRoutes = require('./routes/shelters');
+const petsForAdoptionRoutes = require('./routes/petsForAdoption')
 const express = require('express');
 const app = express();
 
@@ -12,5 +13,6 @@ const cors = require('cors');
 app.use(cors());
 
 app.use("/shelters", shelterRoutes);
+app.use("/petsForAdoption", petsForAdoptionRoutes);
 
 app.listen(5000, () => console.log('Server running on port 5000'));
