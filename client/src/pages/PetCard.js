@@ -42,9 +42,10 @@ const PetCard = ({_id, name, age, contact, image, description}) => {
             <div className="pet-overlay">
                 <div className="pet-info">
                     <p className="pet-name">{name}</p>
-                    <p className="pet-age">{age} old</p>
+                    {/* <p className="pet-age">{age} old</p> */}
+                    {age && (<p className="pet-age">{age} old</p>)}
                 </div>
-                <p className="pet-contact">Contact: {contact?.name} {contact?.phone} {contact?.address}</p>
+                {contact && (<p className="pet-contact">Contact: {contact?.name} {contact?.phone} {contact?.address}</p>)}
             </div>
         </div>
     );

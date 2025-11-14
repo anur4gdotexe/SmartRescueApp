@@ -8,16 +8,10 @@
     color: white;
     margin: 0;
 
-    /* width: 100vw; */
-    /* overflow-x: hidden; */
-
     font-family: 'Eurostile', sans-serif;
 
     display: flex;
     flex-direction: column;
-    /*gap: 4rem;*/
-    /* align-items: center;
-    justify-content: center; */
 
     padding: 0;
 }
@@ -32,15 +26,10 @@
 }
 
 .rsc-section {
-    /* position: fixed; */
-    width: calc(100vw - 8rem);
     background-color: #8479FE;
     overflow: hidden;
 }
 .adp-section {
-    /* position: relative; */
-    /* left: 30vw; */
-    /* top: 30vw; */
     background-color: #2B2C3F;
     color: white;
 }

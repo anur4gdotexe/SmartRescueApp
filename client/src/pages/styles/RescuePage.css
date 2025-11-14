@@ -6,7 +6,6 @@
     font-weight: 400;
 
     width: 60vw;
-    max-width: calc(100vw - 8rem - 4rem);
     height: 80vh;
 
     display: flex;

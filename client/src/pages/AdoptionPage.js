@@ -35,27 +35,16 @@ const AdoptionPage = () => {
     console.log(pets);
 
     return (
+        <>
+        <p className='heading'>ADOPT A PET</p>
         <div className='adoption-section'>
-            <p className='heading'>ADOPT A PET</p>
             <div className='pet-list'>
-                {/* {pets.map((pet, idx) => (
+                {pets.map((pet, idx) => (
                     <PetCard key={idx} {...pet}/>
-                ))} */}
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div>
-                <div class="items"></div> 
+                ))}
             </div>
         </div>
+        </>
     );
 }
 

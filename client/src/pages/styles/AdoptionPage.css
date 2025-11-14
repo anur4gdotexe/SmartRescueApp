@@ -1,41 +1,25 @@
 .adoption-section {
-    /* width: 100%; */
     padding: 0;
-    /* overflow: hidden; */
 
     font-family: 'Eurostile', sans-serif;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    overflow-x: auto;
 }
 
-.adoption-section .heading {
+.heading {
     font-size: 2rem;
     font-weight: 600;
+    position: absolute;
+    top: 44rem;
+    left: 4.2rem;
 }
 
 .pet-list {
-    /* gap: 1.5rem; */
-    /* width: 100%; */
-
-    /* white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden; */
-    /* scroll-behavior: smooth; */
-    /* box-sizing: border-box; */
-
     display: flex;
     flex-direction: row;
-    padding: 2rem;
-
-    white-space: nowrap;
-    overflow-x: auto;
+    padding-top: 2rem;
+    gap: 1.5rem;
 }
-.items {
-    min-width: 200px;
-    height: 200px;
-    display: inline-block;
-    background-color: green;
-    border: 1rem solid black;
+
+.adoption-section::-webkit-scrollbar {
+  height: 0px;
 }
