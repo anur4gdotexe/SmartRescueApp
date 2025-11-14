@@ -36,7 +36,7 @@ const AdoptionPage = () => {
 
     return (
         <>
-        <p className='heading'>ADOPT A PET</p>
+        <p className='heading'><i class="fa-solid fa-paw"></i> ADOPT A PET</p>
         <div className='adoption-section'>
             <div className='pet-list'>
                 {pets.map((pet, idx) => (

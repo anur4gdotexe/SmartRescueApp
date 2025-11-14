@@ -51,6 +51,11 @@ const RescuePage = () => {
   }
 
   return (
+    <>
+    <div className='page-heading'>
+      <p className='title'>Smart Rescue App <i class="fa-solid fa-dog"></i></p>
+      <p className='tagline'>helping every stray find care, love, and a home.</p>
+    </div>
     <div className="main">
       <div className='btn-section'>
         <button className="rescue-btn" onClick={fetchLocation}>FIND SHELTERS</button>
@@ -76,6 +81,7 @@ const RescuePage = () => {
       </div>
       )}
     </div>
+    </>
   );
 }
 

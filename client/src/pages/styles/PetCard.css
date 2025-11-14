@@ -7,6 +7,7 @@
     backdrop-filter: blur(20px);
 
     overflow: hidden;
+    transition: 0.2s all;
 }
 
 .pet-image {
@@ -22,6 +23,12 @@
     transform: translate(-50%, -50%);
     object-fit: contain;
     display: block;
+}
+
+.pet-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    border-radius: 1rem;
 }
 
 .pet-overlay {
@@ -61,8 +68,6 @@
 .pet-contact {
     position: absolute;
     bottom: 25px;
-    /* top: 2rem; */
-    /* padding: -10px 0; */
     left: 50%;
     transform: translateX(-50%);
 

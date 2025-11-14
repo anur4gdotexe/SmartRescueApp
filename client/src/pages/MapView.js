@@ -45,12 +45,12 @@ const MapView = ({shelters, userLocation}) => {
                     </Tooltip>
                     
                     <Popup>
-                        <b>{shelter.name}</b><br/>
-                        {shelter.address}<br/>
-                        {shelter.phone}<br/>
-                        <a href={`https://www.google.com/maps/dir/?api=1&destination=${shelter.location.coordinates[1]},${shelter.location.coordinates[0]}`} target="_blank" rel="noreferrer">
-                            Get Directions
-                        </a>                        
+                        <p style={{margin: "4px 0px"}}><b>{shelter.name}</b></p>
+                        <p style={{margin: "4px 0px"}}>{shelter.address}</p>
+                        <p style={{margin: "4px 0px"}}>{shelter.phone}</p>
+                        <p style={{margin: "4px 0px"}}><a href={`https://www.google.com/maps/dir/?api=1&destination=${shelter.location.coordinates[1]},${shelter.location.coordinates[0]}`} target="_blank" rel="noreferrer">
+                            Get Directions <i class="fa-solid fa-route"></i>
+                        </a></p>                        
                     </Popup>
                 </Marker>
                 </div>

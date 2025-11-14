@@ -6,17 +6,27 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.leaflet-popup-content-wrapper {
+.leaflet-popup-content-wrapper{
     width: 0;
     height: 0;
+    padding: 0;
+}
+
+.leaflet-popup-content-wrapper p{
+  margin: 4px 0px;
 }
 .leaflet-popup-content {
-    width: 10rem;
+    width: 12rem;
     color: white;
-    background-color: black;
-    padding: 1rem;
-    border-radius: 2rem;
+    background-color: #2B2C3F;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
 }
+.leaflet-popup-tip, .leaflet-popup-close-button{
+  width: 0;
+  height: 0;
+}
+
 .leaflet-container .leaflet-tooltip {
     font-weight: 400;
     border-radius: 0.5rem;

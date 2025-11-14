@@ -3,19 +3,22 @@
 
     font-family: 'Eurostile', sans-serif;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 
 .heading {
+    font-family: 'Lora', sans;
     font-size: 2rem;
     font-weight: 600;
     position: absolute;
-    top: 44rem;
+    top: 60rem;
     left: 4.2rem;
 }
 
 .pet-list {
     display: flex;
     flex-direction: row;
+    padding: 1rem;
     padding-top: 2rem;
     gap: 1.5rem;
 }

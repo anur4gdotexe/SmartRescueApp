@@ -1,3 +1,32 @@
+.page-heading {
+    height: 20vh;
+    margin-bottom: 4rem;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+p.title {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 4rem;
+    text-align: center;
+
+    text-shadow: 0px 0px 100px black;
+    -webkit-text-stroke: 0.5px white; 
+}
+p.title i{
+    text-shadow: 0px 0px 500px black;
+}
+p.tagline {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    text-align: center;
+
+    text-shadow: 0px 0px 100px black;
+}
+
+
 .main {
     background-color: #2B2C3F;
     color: white;
@@ -46,11 +75,13 @@
     padding: 1rem 1.5rem;
     border-radius: 0.25rem;
 
-    transition: border-radius .30s;
+    transition: all .30s;
 }
 
 .rescue-btn:hover {
     border-radius: 1rem;
+    cursor: pointer;
+    background: linear-gradient(to right, white 0%, #EBE5D7 100%);
 }
 
 .map-container {
