@@ -14,11 +14,11 @@ The Smart Rescue App is a tool designed to help locate and connect with nearby a
 ## Tech Stack
 - Frontend: React (with Leaflet maps)
 - Backend: Node.js + Express
-- Database: MongoDB
+- Database: Mon<img src='/SmartRescueApp/client/public/images/appPreview/heading.png' width='100%'/>goDB
 - APIs: Google Maps (directions), WhatsApp/Email integrations
 - Frameworks/libraries: Leaflet, GeoJSON, ColorThief
 
 ## App Preview
-<img src='/SmartRescueApp/client/public/images/appPreview/heading.png' width='100%'/>
-<img src='/SmartRescueApp/client/public/images/appPreview/map.png' width='100%'/>
-<img src='/SmartRescueApp/client/public/images/appPreview/adoption.png' width='100%'/>
+<img src="client/public/images/appPreview/heading.png" width="100%"/>
+<img src="client/public/images/appPreview/map.png" width="100%"/>
+<img src="client/public/images/appPreview/adoption.png" width="100%"/>
