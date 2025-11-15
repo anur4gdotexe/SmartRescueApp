@@ -19,6 +19,6 @@ The Smart Rescue App is a tool designed to help locate and connect with nearby a
 - Frameworks/libraries: Leaflet, GeoJSON, ColorThief
 
 ## App Preview
-<img src='images/appPreview/heading.png' width='100%'/>
-<img src='images/appPreview/map.png' width='100%'/>
-<img src='images/appPreview/adoption.png' width='100%'/>
+<img src='/SmartRescueApp/client/public/images/appPreview/heading.png' width='100%'/>
+<img src='/SmartRescueApp/client/public/images/appPreview/map.png' width='100%'/>
+<img src='/SmartRescueApp/client/public/images/appPreview/adoption.png' width='100%'/>
